@@ -3,182 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nawel | Data Analyst</title>
+    <title>Mon Portfolio | Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-page: #f1f5f9;
+            --bg-card: #ffffff;
+            --primary-purple: #6366f1; 
+            --primary-purple-light: #e0e7ff;
+            --accent-green: #10b981;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Conteneur principal style "Application/Portfolio" */
+        .portfolio-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            background-color: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* En-tête bicolore */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 38% 62%;
+            background-color: var(--bg-card);
+            position: relative;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* Bloc de couleur à gauche */
+        .hero-left {
+            background-color: var(--primary-purple);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .brand-logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* Cercle abstrait avec Icône de Dashboard statistique */
+        .photo-container {
+            position: absolute;
+            right: -110px; 
+            top: 50%;
+            transform: translateY(-50%);
+            width: 220px;
+            height: 220px;
+            background-color: var(--bg-card);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            z-index: 10;
+        }
+
+        .photo-outer-ring {
+            width: 195px;
+            height: 195px;
+            border: 6px solid var(--primary-purple-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-inner-ring {
+            width: 165px;
+            height: 165px;
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid var(--bg-card);
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+        }
+
+        .photo-inner-ring i {
+            color: white;
+            font-size: 3.5rem;
+            animation: pulse 3s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.9; }
+            100% { transform: scale(1.06); opacity: 1; }
+        }
+
+        /* Bloc d'informations à droite */
+        .hero-right {
+            padding: 5rem 2rem 5rem 140px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-right h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-right p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-cv {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            width: fit-content;
+            box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn-cv:hover {
+            background-color: #4f46e5;
+            transform: translateY(-1px);
+        }
+
+        /* Contenu Principal */
+        .main-content {
+            padding: 3rem 2.5rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .section-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 850px;
+        }
+
+        /* --- SECTION COMPOSANTS GRAPHIQUES --- */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: #fafafa;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Schéma de Graphique Statistique */
+        .chart-container {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chart-bars {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 150px;
+            padding-top: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .chart-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 12%;
+        }
+
+        .chart-bar {
+            width: 100%;
+            background: linear-gradient(to top, var(--primary-purple), #818cf8);
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            position: relative;
+        }
+
+        .chart-bar::before {
+            content: attr(data-value);
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .chart-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Compétences Tech */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-badge {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .skill-badge:hover {
+            border-color: var(--primary-purple);
+            transform: translateY(-2px);
+        }
+
+        /* Projets */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            background-color: var(--primary-purple-light);
+            color: var(--primary-purple);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Pied de page */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+            background-color: #fafafa;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .hero-section { grid-template-columns: 1fr; }
+            .hero-left { height: 120px; padding: 0; justify-content: center; }
+            .photo-container { right: auto; left: 50%; top: 120px; transform: translate(-50%, -50%); }
+            .hero-right { padding: 120px 1.5rem 3rem 1.5rem; text-align: center; }
+            .btn-cv { margin: 0 auto; }
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <div class="logo">Nawel.</div>
-
-        <nav>
-            <a href="#home">Accueil</a>
-            <a href="#about">À propos</a>
-            <a href="#skills">Compétences</a>
-            <a href="#projects">Projets</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-
-        <div class="hero-text">
-            <h1>Bonjour, je suis <span>Nawel</span></h1>
-
-            <h2>Data Analyst & Business Intelligence</h2>
-
-            <p>
-                Passionnée par l’analyse des données, la visualisation et le reporting stratégique.
-                Je transforme les données en décisions intelligentes grâce à Power BI, Excel, SQL et Python.
-            </p>
-
-            <div class="buttons">
-                <a href="#projects" class="btn">Voir mes projets</a>
-                <a href="#contact" class="btn-outline">Contact</a>
+    <div class="portfolio-wrapper">
+        
+        <div class="hero-section">
+            <div class="hero-left">
+                <div class="brand-logo">Portfolio</div>
+                
+                <div class="photo-container">
+                    <div class="photo-outer-ring">
+                        <div class="photo-inner-ring">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <h1>Votre Nom Ici</h1>
+                <p>Votre Profession / Spécialité</p>
+                <a href="#" class="btn-cv"><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Télécharger le CV</a>
             </div>
         </div>
 
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Data Analyst">
-        </div>
+        <div class="main-content">
+            
+            <section>
+                <h2><i class="fa-solid fa-chart-line" style="color: var(--primary-purple);"></i> Activité & Métriques</h2>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">00+</div>
+                        <div class="metric-label">Indicateur 1</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">00%</div>
+                        <div class="metric-label">Indicateur 2</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">00</div>
+                        <div class="metric-label">Indicateur 3</div>
+                    </div>
+                </div>
 
-    </section>
+                <div class="chart-container">
+                    <div class="chart-title">
+                        <span>Titre du graphique analytique</span>
+                        <span style="color: var(--accent-green); font-size: 0.85rem;"><i class="fa-solid fa-caret-up"></i> +00% Statut</span>
+                    </div>
+                    <div class="chart-bars">
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 45px;" data-value="M1"></div>
+                            <div class="chart-label">Dat 1</div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 85px;" data-value="M2"></div>
+                            <div class="chart-label">Dat 2</div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 125px;" data-value="M3"></div>
+                            <div class="chart-label">Dat 3</div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 70px;" data-value="M4"></div>
+                            <div class="chart-label">Dat 4</div>
+                        </div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" style="height: 110px;" data-value="M5"></div>
+                            <div class="chart-label">Dat 5</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-
-        <h2 class="section-title">À propos</h2>
-
-        <div class="about-container">
-
-            <div class="about-card">
-                <h3>Profil</h3>
-
-                <p>
-                    Data Analyst spécialisée dans l’analyse statistique,
-                    les tableaux de bord Power BI et le reporting KPI.
-                    J’aime résoudre les problèmes métier grâce aux données.
+            <section>
+                <h2><i class="fa-regular fa-user" style="color: var(--primary-purple);"></i> À propos</h2>
+                <p class="section-text">
+                    [Ajoutez votre texte de présentation ici. Décrivez brièvement votre parcours, vos passions, vos domaines d'expertise et ce qui fait votre force professionnelle.]
                 </p>
-            </div>
+            </section>
 
-            <div class="about-card">
-                <h3>Objectif</h3>
-
-                <p>
-                    Construire des dashboards modernes,
-                    automatiser les rapports et aider les entreprises
-                    à prendre des décisions basées sur les données.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- SKILLS -->
-    <section class="skills" id="skills">
-
-        <h2 class="section-title">Compétences</h2>
-
-        <div class="skills-grid">
-
-            <div class="skill-card">Power BI</div>
-            <div class="skill-card">Excel</div>
-            <div class="skill-card">SQL</div>
-            <div class="skill-card">Python</div>
-            <div class="skill-card">Data Visualization</div>
-            <div class="skill-card">Reporting KPI</div>
-            <div class="skill-card">Statistics</div>
-            <div class="skill-card">Dashboard Design</div>
-
-        </div>
-
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-
-        <h2 class="section-title">Mes Projets</h2>
-
-        <div class="projects-grid">
-
-            <div class="project-card">
-
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
-
-                <div class="project-content">
-                    <h3>Dashboard Power BI</h3>
-
-                    <p>
-                        Analyse des ventes avec KPI, évolution mensuelle
-                        et visualisation dynamique des performances.
-                    </p>
+            <section>
+                <h2><i class="fa-solid fa-code" style="color: var(--primary-purple);"></i> Compétences</h2>
+                <div class="skills-grid">
+                    <div class="skill-badge"><i class="fa-solid fa-chart-bar" style="color: #f2c811;"></i> Compétence 1</div>
+                    <div class="skill-badge"><i class="fa-solid fa-database" style="color: #00758f;"></i> Compétence 2</div>
+                    <div class="skill-badge"><i class="fa-regular fa-file-excel" style="color: #107c41;"></i> Compétence 3</div>
+                    <div class="skill-badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Compétence 4</div>
+                    <div class="skill-badge"><i class="fa-solid fa-eye" style="color: #6366f1;"></i> Compétence 5</div>
                 </div>
+            </section>
 
-            </div>
-
-            <div class="project-card">
-
-                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop">
-
-                <div class="project-content">
-                    <h3>Analyse Transport</h3>
-
-                    <p>
-                        Étude des réclamations et analyse des stations
-                        les plus critiques avec reporting automatisé.
-                    </p>
+            <section>
+                <h2><i class="fa-solid fa-diagram-project" style="color: var(--primary-purple);"></i> Projets Récents</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Nom de votre Projet</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Description claire et concise du projet effectué, de la problématique résolue et des outils technologiques employés.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Techno 1</span>
+                            <span class="project-tag">Techno 2</span>
+                            <span class="project-tag">Secteur</span>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-
-            <div class="project-card">
-
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
-
-                <div class="project-content">
-                    <h3>Projet SQL</h3>
-
-                    <p>
-                        Création de requêtes SQL avancées
-                        pour l’analyse des données clients.
-                    </p>
-                </div>
-
-            </div>
+            </section>
 
         </div>
 
-    </section>
+        <footer>
+            <p>Mon Portfolio &copy; 2026 | Hébergé avec GitHub Pages</p>
+        </footer>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <h2 class="section-title">Contact</h2>
-
-        <div class="contact-container">
-
-            <p>Email : nawel@email.com</p>
-
-            <p>LinkedIn : linkedin.com/in/nawel</p>
-
-            <p>GitHub : github.com/nawel-data</p>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Nawel | Data Analyst Portfolio</p>
-    </footer>
+    </div>
 
 </body>
 </html>
