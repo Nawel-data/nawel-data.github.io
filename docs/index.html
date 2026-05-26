@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nawel CHETTIR | Data Analyst Portfolio</title>
+    <title>Mon Portfolio | Data Analyst</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -34,7 +34,7 @@
             justify-content: center;
         }
 
-        /* Conteneur principal */
+        /* Conteneur principal style "Application/Portfolio" */
         .portfolio-wrapper {
             width: 100%;
             max-width: 1000px;
@@ -44,7 +44,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        /* En-tête bicolore asymétrique */
+        /* En-tête bicolore */
         .hero-section {
             display: grid;
             grid-template-columns: 38% 62%;
@@ -53,7 +53,7 @@
             border-bottom: 1px solid #e2e8f0;
         }
 
-        /* Bloc Violet à gauche */
+        /* Bloc de couleur à gauche */
         .hero-left {
             background-color: var(--primary-purple);
             display: flex;
@@ -73,7 +73,7 @@
             letter-spacing: -0.02em;
         }
 
-        /* Structure des Cercles avec Icône Dashboard (Pas de photo perso) */
+        /* Cercle abstrait avec Icône de Dashboard statistique */
         .photo-container {
             position: absolute;
             right: -110px; 
@@ -120,10 +120,10 @@
 
         @keyframes pulse {
             0% { transform: scale(1); opacity: 0.9; }
-            100% { transform: scale(1.08); opacity: 1; }
+            100% { transform: scale(1.06); opacity: 1; }
         }
 
-        /* Bloc Blanc à droite */
+        /* Bloc d'informations à droite */
         .hero-right {
             padding: 5rem 2rem 5rem 140px; 
             display: flex;
@@ -166,7 +166,7 @@
             transform: translateY(-1px);
         }
 
-        /* Corps du Portfolio */
+        /* Contenu Principal */
         .main-content {
             padding: 3rem 2.5rem;
         }
@@ -185,7 +185,13 @@
             color: var(--text-dark);
         }
 
-        /* --- NOUVELLE SECTION : GRAPHIQUES ET KPIS --- */
+        .section-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 850px;
+        }
+
+        /* --- SECTION COMPOSANTS GRAPHIQUES --- */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -215,7 +221,7 @@
             letter-spacing: 0.05em;
         }
 
-        /* Schéma de Graphique Statistique en CSS pur */
+        /* Schéma de Graphique Statistique */
         .chart-container {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -247,7 +253,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex-gap: 0.5rem;
             width: 12%;
         }
 
@@ -256,12 +261,7 @@
             background: linear-gradient(to top, var(--primary-purple), #818cf8);
             border-top-left-radius: 6px;
             border-top-right-radius: 6px;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-        }
-
-        .chart-bar:hover {
-            opacity: 0.85;
         }
 
         .chart-bar::before {
@@ -347,7 +347,7 @@
             background-color: #fafafa;
         }
 
-        /* Responsive */
+        /* Responsive Mobile */
         @media (max-width: 768px) {
             .hero-section { grid-template-columns: 1fr; }
             .hero-left { height: 120px; padding: 0; justify-content: center; }
@@ -363,7 +363,7 @@
         
         <div class="hero-section">
             <div class="hero-left">
-                <div class="brand-logo">Nawel</div>
+                <div class="brand-logo">Portfolio</div>
                 
                 <div class="photo-container">
                     <div class="photo-outer-ring">
@@ -375,78 +375,77 @@
             </div>
             
             <div class="hero-right">
-                <h1>Nawel CHETTIR</h1>
-                <p>Data Analyst | Business Intelligence & Visualisation de Données</p>
-                <a href="#" class="btn-cv"><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Télécharger CV</a>
+                <h1>Votre Nom Ici</h1>
+                <p>Votre Profession / Spécialité</p>
+                <a href="#" class="btn-cv"><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Télécharger le CV</a>
             </div>
         </div>
 
         <div class="main-content">
             
             <section>
-                <h2><i class="fa-solid fa-chart-line" style="color: var(--primary-purple);"></i> Performance & Activité</h2>
+                <h2><i class="fa-solid fa-chart-line" style="color: var(--primary-purple);"></i> Activité & Métriques</h2>
                 
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <div class="metric-value">15+</div>
-                        <div class="metric-label">Dashboards Clés</div>
+                        <div class="metric-value">00+</div>
+                        <div class="metric-label">Indicateur 1</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-value">98%</div>
-                        <div class="metric-label">Précision Data</div>
+                        <div class="metric-value">00%</div>
+                        <div class="metric-label">Indicateur 2</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-value">3 ans</div>
-                        <div class="metric-label">Expérience</div>
+                        <div class="metric-value">00</div>
+                        <div class="metric-label">Indicateur 3</div>
                     </div>
                 </div>
 
                 <div class="chart-container">
                     <div class="chart-title">
-                        <span>Volume de Données Analysées (Par Projet)</span>
-                        <span style="color: var(--accent-green); font-size: 0.85rem;"><i class="fa-solid fa-caret-up"></i> +24% Croissance</span>
+                        <span>Titre du graphique analytique</span>
+                        <span style="color: var(--accent-green); font-size: 0.85rem;"><i class="fa-solid fa-caret-up"></i> +00% Statut</span>
                     </div>
                     <div class="chart-bars">
                         <div class="chart-bar-wrapper">
-                            <div class="chart-bar" style="height: 45px;" data-value="45K"></div>
-                            <div class="chart-label">P1</div>
+                            <div class="chart-bar" style="height: 45px;" data-value="M1"></div>
+                            <div class="chart-label">Dat 1</div>
                         </div>
                         <div class="chart-bar-wrapper">
-                            <div class="chart-bar" style="height: 85px;" data-value="85K"></div>
-                            <div class="chart-label">P2</div>
+                            <div class="chart-bar" style="height: 85px;" data-value="M2"></div>
+                            <div class="chart-label">Dat 2</div>
                         </div>
                         <div class="chart-bar-wrapper">
-                            <div class="chart-bar" style="height: 125px;" data-value="120K"></div>
-                            <div class="chart-label">P3</div>
+                            <div class="chart-bar" style="height: 125px;" data-value="M3"></div>
+                            <div class="chart-label">Dat 3</div>
                         </div>
                         <div class="chart-bar-wrapper">
-                            <div class="chart-bar" style="height: 70px;" data-value="70K"></div>
-                            <div class="chart-label">P4</div>
+                            <div class="chart-bar" style="height: 70px;" data-value="M4"></div>
+                            <div class="chart-label">Dat 4</div>
                         </div>
                         <div class="chart-bar-wrapper">
-                            <div class="chart-bar" style="height: 110px;" data-value="110K"></div>
-                            <div class="chart-label">P5</div>
+                            <div class="chart-bar" style="height: 110px;" data-value="M5"></div>
+                            <div class="chart-label">Dat 5</div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2><i class="fa-regular fa-user" style="color: var(--primary-purple);"></i> À propos de moi</h2>
-                <p class="about-text">
-                    Passionnée par l'analyse de données et titulaire d'un Master en Sciences Quantitatives. Spécialisée dans la création de tableaux de bord interactifs, le suivi des KPIs, la Business Intelligence et la narration par les données (Data Storytelling).
+                <h2><i class="fa-regular fa-user" style="color: var(--primary-purple);"></i> À propos</h2>
+                <p class="section-text">
+                    [Ajoutez votre texte de présentation ici. Décrivez brièvement votre parcours, vos passions, vos domaines d'expertise et ce qui fait votre force professionnelle.]
                 </p>
             </section>
 
             <section>
-                <h2><i class="fa-solid fa-code" style="color: var(--primary-purple);"></i> Compétences Tech</h2>
+                <h2><i class="fa-solid fa-code" style="color: var(--primary-purple);"></i> Compétences</h2>
                 <div class="skills-grid">
-                    <div class="skill-badge"><i class="fa-solid fa-chart-bar" style="color: #f2c811;"></i> Power BI</div>
-                    <div class="skill-badge"><i class="fa-solid fa-database" style="color: #00758f;"></i> SQL</div>
-                    <div class="skill-badge"><i class="fa-regular fa-file-excel" style="color: #107c41;"></i> Excel</div>
-                    <div class="skill-badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Python</div>
-                    <div class="skill-badge"><i class="fa-solid fa-eye" style="color: #6366f1;"></i> Visualisation de Données</div>
-                    <div class="skill-badge"><i class="fa-solid fa-brain" style="color: #ec4899;"></i> Business Intelligence</div>
+                    <div class="skill-badge"><i class="fa-solid fa-chart-bar" style="color: #f2c811;"></i> Compétence 1</div>
+                    <div class="skill-badge"><i class="fa-solid fa-database" style="color: #00758f;"></i> Compétence 2</div>
+                    <div class="skill-badge"><i class="fa-regular fa-file-excel" style="color: #107c41;"></i> Compétence 3</div>
+                    <div class="skill-badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Compétence 4</div>
+                    <div class="skill-badge"><i class="fa-solid fa-eye" style="color: #6366f1;"></i> Compétence 5</div>
                 </div>
             </section>
 
@@ -454,12 +453,12 @@
                 <h2><i class="fa-solid fa-diagram-project" style="color: var(--primary-purple);"></i> Projets Récents</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Transport KPI Dashboard</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Analyse approfondie de la performance des transports, suivi des retards logistiques et gestion des réclamations clients à l'aide de Power BI et DAX.</p>
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Nom de votre Projet</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Description claire et concise du projet effectué, de la problématique résolue et des outils technologiques employés.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Power BI</span>
-                            <span class="project-tag">DAX</span>
-                            <span class="project-tag">Logistique</span>
+                            <span class="project-tag">Techno 1</span>
+                            <span class="project-tag">Techno 2</span>
+                            <span class="project-tag">Secteur</span>
                         </div>
                     </div>
                 </div>
@@ -468,7 +467,7 @@
         </div>
 
         <footer>
-            <p>Footer &copy; 2026 ear: nawel-data.github.io</p>
+            <p>Mon Portfolio &copy; 2026 | Hébergé avec GitHub Pages</p>
         </footer>
 
     </div>
